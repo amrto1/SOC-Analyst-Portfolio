@@ -6,36 +6,20 @@
 |---|---|
 | Event ID / Time | `45` / `2021-01-31 15:48:30 +03:00` |
 | Severity / Type | High / Exchange |
-| Sender | `accounting@cmail.carleton.ca` |
-| Recipient | `richard@letsdefend.io` |
+| Sender / Recipient | `accounting@cmail.carleton.ca` → `richard@letsdefend.io` |
 | Subject | Invoice |
 | Sender IP | `49.234.43.39` |
-| Device Action | Allowed |
-| Final Result | True Positive |
+| Device Action | **Allowed** |
+| MITRE ATT&CK shown in alert | `T1598.001` |
 
 ## Investigation
 
-Email Security showed an invoice-themed message with an attachment. The playbook confirmed that the email was **Delivered** and that the recipient **Opened** the malicious file or URL.
+- **Email:** Invoice-themed message with an attachment. The playbook confirmed it was **Delivered** and the malicious file/URL was **Opened**.
+- **Attachment analysis:** VirusTotal showed **37/62 detections** for the analyzed spreadsheet sample, tagged with phishing/downloader indicators and `CVE-2017-11882`.
+- **URL access:** Browser history on `RichardPRD` (`172.16.17.45`) showed `andaluciabeach.net/image/network.exe` at `2021-01-31 16:15`. The supplied VirusTotal URL report showed **10/91 detections** and resolved the domain to `70.38.21.234`. This report dates from 2026, so it is not a reputation snapshot from the incident date.
+- **Endpoint process:** At `2021-01-31 16:20`, `JuicyPotato.exe` was listed at `C:/User/Public/JuicyPotato.exe` running as `NT Authority/System`. Its VirusTotal report showed **58/71 detections** and a JuicyPotato-related label.
 
-![Email Security record](screenshots/01-email-details.webp)
-
-VirusTotal showed **37/62 detections** for the analyzed spreadsheet sample, with phishing/downloader labels and a `CVE-2017-11882` tag.
-
-![VirusTotal spreadsheet report](screenshots/02-virustotal-attachment.webp)
-
-Endpoint Security browser history on `RichardPRD` (`172.16.17.45`) recorded access to `andaluciabeach.net/image/network.exe` at `2021-01-31 16:15`. The supplied VirusTotal URL report showed **10/91 detections** and resolved the domain to `70.38.21.234`. This report was generated years after the incident, so it is not treated as a reputation snapshot from the event date.
-
-![Endpoint browser history](screenshots/03-browser-history.webp)
-
-![VirusTotal URL report](screenshots/04-virustotal-url.webp)
-
-A process record on `RichardPRD` showed `JuicyPotato.exe` at `C:/User/Public/JuicyPotato.exe`, running as `NT Authority/System` at `2021-01-31 16:20`. Its VirusTotal report showed **58/71 detections** and a JuicyPotato-related label.
-
-![Endpoint process evidence](screenshots/05-endpoint-process.webp)
-
-![VirusTotal JuicyPotato report](screenshots/06-virustotal-juicypotato.webp)
-
-The screenshots do not establish that the spreadsheet, the downloaded executable, and the later process are the same file or prove a complete execution chain. The process record lacks a PID, parent process, and command line.
+The screenshots do not establish that the email attachment, the downloaded executable, and the later process are the same file or prove a complete execution chain. The process record lacks a PID, parent process, and command line.
 
 ## Playbook Results
 
@@ -50,4 +34,4 @@ The screenshots do not establish that the spreadsheet, the downloaded executable
 
 ## Final Assessment
 
-**True Positive — phishing email delivered and opened, with malicious attachment/URL findings and suspicious endpoint activity.** The supplied evidence supports the lab verdict, but does not independently establish the full relationship between the email attachment, URL access, and later SYSTEM-level process.
+**True Positive — phishing email delivered and opened, with malicious attachment/URL findings and suspicious endpoint activity.** The lab evidence supports the verdict, but does not independently prove the full relationship between the attachment, URL access, and later SYSTEM-level process.
