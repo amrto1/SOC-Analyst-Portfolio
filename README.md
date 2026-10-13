@@ -4,8 +4,9 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 ## LetsDefend
 
-| Alert | Skills demonstrated | Write-up |
-|---|---|---|
-| SOC109 – Emotet Malware Detected | Malware triage, PowerShell decoding and deobfuscation, network IOC analysis, incident-response playbook | [Read the case study](LetsDefend/SOC109-Emotet-Malware-Detected/README.md) |
+| Alert | Focus | Verdict | Write-up |
+|---|---|---|---|
+| SOC108 – Malicious Remote Access Software Detected | Process review, network analysis, threat intelligence, playbook | False Positive | [Read case study](LetsDefend/SOC108-Malicious-Remote-Access-Software-Detected/README.md) |
+| SOC109 – Emotet Malware Detected | Malware triage, PowerShell decoding and deobfuscation, network IOC analysis | True Positive | [Read case study](LetsDefend/SOC109-Emotet-Malware-Detected/README.md) |
 
-All findings are based on the evidence available in the lab. Successful malware execution and containment are not claimed unless confirmed by the available evidence.
+All findings reflect the evidence available in each lab. Successful execution or containment is not claimed unless confirmed.
