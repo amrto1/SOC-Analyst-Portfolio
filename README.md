@@ -12,5 +12,6 @@ A collection of hands-on SOC investigations and blue-team labs.
 | SOC108 – Malicious Remote Access Software Detected | Process review, network analysis, threat intelligence, playbook | False Positive | [Read case study](LetsDefend/SOC108-Malicious-Remote-Access-Software-Detected/README.md) |
 | SOC109 – Emotet Malware Detected | Malware triage, PowerShell decoding and deobfuscation, network IOC analysis | True Positive | [Read case study](LetsDefend/SOC109-Emotet-Malware-Detected/README.md) |
 | SOC112 – Traffic to Blacklisted IP | Proxy log analysis, URL reputation, threat intelligence, containment | True Positive | [Read case study](LetsDefend/SOC112-Traffic-to-Blacklisted-IP/README.md) |
+| SOC114 – Malicious Attachment Detected | Phishing email review, malicious attachment/URL analysis, browser and endpoint evidence | True Positive | [Read case study](LetsDefend/SOC114-Malicious-Attachment-Detected/README.md) |
 
 All findings reflect the evidence available in each lab. Successful execution or containment is not claimed unless confirmed.
