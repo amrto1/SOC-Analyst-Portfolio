@@ -19,7 +19,7 @@
 
 Email Security showed a message from `david@cashbank.com` to `mark@letsdefend.io` with the subject **Credit Card Statement** and body text: “Your credit card statement is attached.”
 
-The displayed attachment name was `svg9ed9ad87a1564fbb5e1b652b3e7148c8`. The lab sample was provided inside a ZIP archive whose URL basename was `9ed9ad87a1564fbb5e1b652b3e7148c8.zip`; the lab-provided archive password was `infected`.
+The Email Security screenshot shows the attachment label as `9ed9ad87a1564fbb5e1b652b3e7148c8`. The lab download URL refers to `9ed9ad87a1564fbb5e1b652b3e7148c8.zip`; the archive password provided by the lab was `infected`. Earlier notes used the label `svg9ed9ad87a1564fbb5e1b652b3e7148c8`, so the exact attachment display name is not fully consistent across the available records.
 
 ### Sender reputation
 
@@ -75,16 +75,18 @@ This supports that the message was blocked at the mail-security stage. It does n
 | Recipient email | `mark@letsdefend.io` | Intended recipient |
 | Sender IP | `104.140.188.46` | Correlated across alert and logs |
 | Subject | `Credit Card Statement` | Alerted message |
-| Attachment display name | `svg9ed9ad87a1564fbb5e1b652b3e7148c8` | As displayed in Email Security |
+| Attachment label | `9ed9ad87a1564fbb5e1b652b3e7148c8` | As visible in the supplied Email Security screenshot |
+| Alternate attachment label | `svg9ed9ad87a1564fbb5e1b652b3e7148c8` | Present in earlier lab notes; exact display label is inconsistent |
 | ZIP archive basename | `9ed9ad87a1564fbb5e1b652b3e7148c8.zip` | Lab download URL |
+| SHA-256 of VirusTotal executable | `3cc33ce58536242bc9b2029cd9475a287351a379ccbd12da6b8b7bf2cc68be89` | Executable sample shown in VirusTotal; not confirmed as the attachment's hash |
 
 The lab's sample-download host is recorded as sample provenance, not automatically classified as attacker-controlled infrastructure.
 
 ## 7. Final Assessment
 
-**True Positive – phishing email containing a malicious attachment, blocked before delivery to the intended recipient.**
+**True Positive – phishing email blocked before delivery to the intended recipient, with an associated executable sample flagged as malicious in VirusTotal.**
 
-The sender-reputation observations, the malicious executable sample shown in VirusTotal, and the lab's final verdict support classifying this alert as a true positive. However, successful execution, persistence, or compromise of Mark's endpoint was **not established**. No successful execution, persistence, or compromise of Mark's endpoint was established.
+The sender-reputation observations, the email context, the malicious executable sample shown in VirusTotal, and the lab's final verdict support classifying this alert as a true positive. The VirusTotal screenshot does not establish that the displayed executable is the same file as the email attachment. Successful execution, persistence, or compromise of Mark's endpoint was **not established**.
 
 ## 8. ATT&CK Mapping Note
 
