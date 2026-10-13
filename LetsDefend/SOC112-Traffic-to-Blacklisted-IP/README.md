@@ -51,7 +51,7 @@ The submitted VirusTotal URL report for `http://193.239.147.32/OBBBOP.exe` showe
 
 ![VirusTotal URL report showing 14 of 92 detections](screenshots/03-virustotal-url.webp)
 
-The lab's URL-analysis playbook answer was **Malicious**. This supports classifying the alert as a true positive for traffic to a malicious URL. The URL reputation result is evidence about the URL; it does not by itself prove successful download or execution of the executable.
+The VirusTotal screenshot is a later lookup dated **2026-10-06 12:29:19 UTC**, not a reputation snapshot from the January 2021 alert time. The lab's URL-analysis playbook answer was **Malicious**. Together, the lab result and the supplied report support classifying the alert as a true positive for traffic to a malicious URL. The URL reputation result is evidence about the URL; it does not by itself prove successful download or execution of the executable.
 
 ## 4. User-Agent Context
 
