@@ -1,12 +1,10 @@
 # SOC108 Screenshots
 
-Put screenshots for the SOC108 case study in this directory. Suggested filenames:
+Evidence images embedded in the [SOC108 write-up](../README.md):
 
-- `01-alert-details.png`
-- `02-virustotal-hash.png`
-- `03-threat-intelligence-tap.png`
-- `04-processes-injector-vbs.png`
-- `05-anydesk-network-logs.png`
-- `06-playbook-final-result.png`
+- `01-threat-intel.webp` — LetsDefend Threat Intelligence TAP hash tag.
+- `02-virustotal.webp` — VirusTotal report showing 0/71 detections for AnyDesk.exe.
+- `03-processes.webp` — Endpoint Security process details for WScript.exe.
+- `04-network-logs.webp` — Log Management records for AnyDesk-related network connections.
 
-Only upload evidence captured from your own lab session. Redact any personal information or credentials before uploading.
+Alert details and final Playbook results are documented as text in the write-up; separate screenshots for those steps were intentionally omitted.
