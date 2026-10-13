@@ -25,7 +25,7 @@ The displayed attachment name was `svg9ed9ad87a1564fbb5e1b652b3e7148c8`. The lab
 
 The walkthrough reports that the sender IP had poor email reputation in Cisco Talos. Its checks for `cashbank.com` also reported no MX record and no visible SPF/DNS or DMARC record. These are the results described by the walkthrough and should not be treated as a current DNS assessment.
 
-![Email Security record for the Credit Card Statement message](screenshots/02-email-details.webp)
+![Email Security record for the Credit Card Statement message](screenshots/02-email-details.png)
 
 Email Security also showed an older message using the same sender address, sent to another recipient in September 2020 from a different IP. This is relevant context, but by itself does not prove the two emails belonged to the same campaign.
 
@@ -33,9 +33,9 @@ Email Security also showed an older message using the same sender address, sent 
 
 The supplied VirusTotal screenshot shows **47/71 security vendors** flagging an executable whose displayed filename is `3cc33ce58536242bc9b2029cd9475a287351a379ccbd12da6b8b7bf2cc68be89.exe`. The page labels the sample with `trojan.bitsaloa/phoenixminer` and the categories `trojan`, `downloader`, and `miner`.
 
-![VirusTotal detection summary for the executable sample](screenshots/03-virustotal-file.webp)
+![VirusTotal detection summary for the executable sample](screenshots/03-virustotal-file.png)
 
-**Evidence limitation:** this screenshot is for an executable sample, not an identifiable hash for the email attachment itself. The reviewed evidence does not establish that this executable is identical to the attached ZIP/sample. Therefore, the 47/71 result supports the malicious classification of the displayed executable, but is not represented as a direct hash verdict for the email attachment. The separate sandbox report shown in the walkthrough was not available for review, so its behavioral findings are not reproduced as independently verified evidence.
+**Evidence limitation:** this screenshot is for an executable sample, not an identifiable hash for the email attachment itself. The reviewed evidence does not establish that this executable is identical to the attached ZIP/sample. Therefore, the 47/71 result supports the malicious classification of the displayed executable, but is not represented as a direct hash verdict for the email attachment. 
 
 ## 4. Network Log Correlation
 
@@ -53,11 +53,11 @@ Log Management recorded the following Exchange event:
 
 The source IP and email addresses correspond to the alerted message. Destination port 25 is consistent with SMTP. The log records `172.16.20.3` as the destination; available evidence does not identify it as Mark's workstation.
 
-![Exchange log row for the message](screenshots/04-smtp-logs.webp)
+![Exchange log row for the message](screenshots/04-smtp-logs.png)
 
 The raw log expands the row's mail fields and confirms the sender and destination email addresses:
 
-![Raw Exchange log fields](screenshots/05-raw-exchange-log.webp)
+![Raw Exchange log fields](screenshots/05-raw-exchange-log.png)
 
 **Timestamp note:** The alert shows `15:39:43 +03:00`, while Email Security and Log Management show approximately `14:39:43` and `14:39:53`. The records do not explain this one-hour difference, so the displayed times are preserved as supplied.
 
@@ -84,7 +84,7 @@ The lab's sample-download host is recorded as sample provenance, not automatical
 
 **True Positive – phishing email containing a malicious attachment, blocked before delivery to the intended recipient.**
 
-The sender-reputation observations, malicious sample assessment, and lab playbook result support the alert classification. However, successful execution, persistence, or compromise of Mark's endpoint was **not established**. Sandbox behavior is kept separate from endpoint evidence.
+The sender-reputation observations, the malicious executable sample shown in VirusTotal, and the lab's final verdict support classifying this alert as a true positive. However, successful execution, persistence, or compromise of Mark's endpoint was **not established**. No successful execution, persistence, or compromise of Mark's endpoint was established.
 
 ## 8. ATT&CK Mapping Note
 
