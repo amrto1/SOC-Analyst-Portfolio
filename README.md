@@ -8,6 +8,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 |---:|---|---|---|---|
 | 48 | SOC107 – Privilege Escalation Detected (JuicyPotato) | Suspicious download, URL reputation, SYSTEM-level process analysis | True Positive | [Read case study](LetsDefend/SOC107-JuicyPotato-Privilege-Escalation/README.md) |
 | 45 | SOC114 – Malicious Attachment Detected | Phishing email review, malicious attachment/URL analysis, browser and endpoint evidence | True Positive | [Read case study](LetsDefend/SOC114-Malicious-Attachment-Detected/README.md) |
+| 44 | SOC113 – Suspicious hh.exe Usage | CHM file analysis, process investigation, file reputation, historical log review | False Positive | [Read case study](LetsDefend/SOC113-Suspicious-hh.exe-Usage/README.md) |
 | 43 | SOC112 – Traffic to Blacklisted IP | Proxy log analysis, URL reputation, threat intelligence, containment | True Positive | [Read case study](LetsDefend/SOC112-Traffic-to-Blacklisted-IP/README.md) |
 | 41 | SOC101 – Phishing Mail Detected | Email analysis, sender reputation, malicious attachment triage, SMTP log correlation | True Positive | [Read case study](LetsDefend/SOC101-Phishing-Mail-Detected/README.md) |
 | 39 | SOC109 – Emotet Malware Detected | Malware triage, PowerShell decoding and deobfuscation, network IOC analysis | True Positive | [Read case study](LetsDefend/SOC109-Emotet-Malware-Detected/README.md) |
