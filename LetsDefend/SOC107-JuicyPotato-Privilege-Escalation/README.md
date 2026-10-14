@@ -1,4 +1,4 @@
-# SOC107 – Privilege Escalation Detected (JuicyPotato)
+# SOC107 – Privilege Escalation Detected (JuicyPotato) — Event ID 48
 
 ## Alert Overview
 
