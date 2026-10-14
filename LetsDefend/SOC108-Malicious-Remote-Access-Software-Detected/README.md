@@ -1,4 +1,4 @@
-# SOC108 – Malicious Remote Access Software Detected
+# SOC108 – Malicious Remote Access Software Detected — Event ID 38
 
 ## 1. Alert Overview
 
