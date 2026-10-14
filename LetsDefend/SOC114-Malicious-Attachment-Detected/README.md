@@ -1,4 +1,4 @@
-# SOC114 – Malicious Attachment Detected
+# SOC114 – Malicious Attachment Detected — Event ID 45
 
 ## Alert Details
 
