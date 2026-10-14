@@ -1,4 +1,4 @@
-# SOC107 – Privilege Escalation Detected
+# SOC107 – Privilege Escalation Detected (creditcard) — Event ID 19
 
 ## Alert Details
 
