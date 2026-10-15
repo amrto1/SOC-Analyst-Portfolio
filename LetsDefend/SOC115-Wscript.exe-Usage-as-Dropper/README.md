@@ -36,7 +36,7 @@ The alert shows `Device Action: Allowed`, and the Playbook result was **Not Quar
 
 The lab classified `injector.vbs` as malicious. The supplied VirusTotal screenshot showed **15/58 detections** at the time of the recorded investigation.
 
-![VirusTotal reputation for injector.vbs](../../injector-repu.png)
+![VirusTotal reputation for injector.vbs](screenshots/injector-repu.png)
 
 Endpoint Security showed the following command line on `DanielPRD`:
 
@@ -44,7 +44,7 @@ Endpoint Security showed the following command line on `DanielPRD`:
 C:/Windows/System32/WScript.exe C:/Users/admin/AppData/Local/Temp/injector.vbs
 ```
 
-![Endpoint Security process details for injector.vbs](../../processes.png)
+![Endpoint Security process details for injector.vbs](screenshots/processes.png)
 
 This indicates that Windows Script Host was used to execute the script from the user's temporary directory. The process record did not include a Process ID.
 
@@ -56,7 +56,7 @@ The separate MD5 `f5e5df6c9d62f4e940b334954a2046fc` belongs to `WScript.exe` and
 
 Log Management recorded two outbound Firewall connections from `172.16.17.33` to `105.103.253.204:2017` on January 31, 2021.
 
-![Firewall records for DanielPRD](../../log-management.png)
+![Firewall records for DanielPRD](screenshots/log-management.png)
 
 The Playbook answer was **Accessed**. The Firewall records support that outbound connections to this destination were logged. However, the available rows do not include raw session data or an explicit action field, so they do not independently prove the contents of the traffic or the completion of a full C2 exchange.
 
@@ -66,7 +66,7 @@ The Playbook answer was **Accessed**. The Firewall records support that outbound
 
 A public ANY.RUN submission matching the `injector.vbs` MD5 identified malicious njRAT-related activity and showed the domain `sousou.linkpc.net` in its analysis.
 
-![ANY.RUN public analysis showing sousou.linkpc.net](../../AnyRun-investigation.png)
+![ANY.RUN public analysis showing sousou.linkpc.net](screenshots/AnyRun-investigation.png)
 
 The sandbox report provides additional context for the malicious verdict and the investigation of potential C2 activity. Sandbox behavior is evidence about the submitted sample in that analysis environment; it does not mean every observed action was independently confirmed on `DanielPRD`.
 
@@ -74,7 +74,7 @@ The sandbox report provides additional context for the malicious verdict and the
 
 VirusTotal Passive DNS showed that `sousou.linkpc.net` had resolved to multiple IP addresses over time, including `41.103.225.155` and several addresses in the `105.103.x.x` and `105.111.x.x` ranges.
 
-![VirusTotal Passive DNS records for sousou.linkpc.net](../../IPs.png)
+![VirusTotal Passive DNS records for sousou.linkpc.net](screenshots/IPs.png)
 
 These records demonstrate that the domain had multiple historical IP resolutions. The dates span several years, and the provided records do **not** directly show `sousou.linkpc.net` resolving to `105.103.253.204`.
 
@@ -82,7 +82,7 @@ These records demonstrate that the domain had multiple historical IP resolutions
 
 The endpoint's Firewall logs show connections to `105.103.253.204:2017`. A separate VirusTotal lookup was also performed for this IP.
 
-![VirusTotal report for 105.103.253.204](../../SUS-IP.png)
+![VirusTotal report for 105.103.253.204](screenshots/SUS-IP.png)
 
 The ANY.RUN analysis showed a separate connection to `41.103.225.155:2017`. The two addresses are reported as belonging to AS36947 (Telecom Algeria), and both observations involve destination port `2017`.
 
