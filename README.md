@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 49 | SOC116 – DNS Hijacking Detected | VirusTotal triage, Python source analysis, hosts-file redirection, network correlation | True Positive | [Read case study](LetsDefend/SOC116-DNS-Hijacking-Detected/README.md) |
 | 48 | SOC107 – Privilege Escalation Detected (JuicyPotato) | Suspicious download, URL reputation, SYSTEM-level process analysis | True Positive | [Read case study](LetsDefend/SOC107-JuicyPotato-Privilege-Escalation/README.md) |
 | 47 | SOC115 – Wscript.exe Usage as Dropper | Script analysis and endpoint investigation | True Positive | [Read case study](LetsDefend/SOC115-Wscript.exe-Usage-as-Dropper/README.md) |
 | 45 | SOC114 – Malicious Attachment Detected | Phishing email review, malicious attachment/URL analysis, browser and endpoint evidence | True Positive | [Read case study](LetsDefend/SOC114-Malicious-Attachment-Detected/README.md) |
