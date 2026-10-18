@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 58 | SOC125 – Suspicious Rundll32 Activity | Suspicious rundll32 command, proxy log analysis, Emotet sandbox investigation, Registry proxy-setting modification | True Positive | [Read case study](LetsDefend/SOC125-Suspicious-Rundll32-Activity/README.md) |
 | 57 | SOC124 – Scheduled Task Created | Scheduled task review, file hash reputation, endpoint terminal history, historical log review | False Positive | [Read case study](LetsDefend/SOC124-Scheduled-Task-Created/README.md) |
 | 56 | SOC123 – Enumeration Tool Detected | Proxy log analysis, Linux enumeration script review, terminal-history correlation, sandbox analysis | True Positive | [Read case study](LetsDefend/SOC123%E2%80%93Enumeration-Tool-Detected/README.md) |
 | 54 | SOC108 – Malicious Remote Access Software Detected (TeamViewer Website Access) | Proxy logs, URL and IP reputation, legitimate remote-access website review | False Positive | [Read case study](LetsDefend/SOC108-TeamViewer-Website-Access/README.md) |
