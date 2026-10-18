@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 54 | SOC108 – Malicious Remote Access Software Detected (TeamViewer Website Access) | Proxy logs, URL and IP reputation, legitimate remote-access website review | False Positive | [Read case study](LetsDefend/SOC108-TeamViewer-Website-Access/README.md) |
 | 53 | SOC121 – Proxy: Malicious Executable File Detected | Proxy log triage, URL/IP reputation, file relationships, sandbox analysis | True Positive | [Read case study](LetsDefend/SOC121-Proxy-Malicious-Executable-File-Detected/README.md) |
 | 51 | SOC118 – Internal Port Scan Activity | File reputation, endpoint process review, internal firewall port-scan correlation | True Positive | [Read case study](LetsDefend/SOC118-Internal-Port-Scan-Activity/README.md) |
 | 49 | SOC116 – DNS Hijacking Detected | VirusTotal triage, Python source analysis, hosts-file redirection, network correlation | True Positive | [Read case study](LetsDefend/SOC116-DNS-Hijacking-Detected/README.md) |
