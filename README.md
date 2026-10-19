@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 60 | SOC127 – SQL Injection Detected | Proxy log analysis, SQL injection payload review, playbook investigation | False Positive | [Read case study](LetsDefend/SOC127-SQL-Injection-Detected/README.md) |
 | 58 | SOC125 – Suspicious Rundll32 Activity | Suspicious rundll32 command, proxy log analysis, Emotet sandbox investigation, Registry proxy-setting modification | True Positive | [Read case study](LetsDefend/SOC125-Suspicious-Rundll32-Activity/README.md) |
 | 57 | SOC124 – Scheduled Task Created | Scheduled task review, file hash reputation, endpoint terminal history, historical log review | False Positive | [Read case study](LetsDefend/SOC124-Scheduled-Task-Created/README.md) |
 | 56 | SOC123 – Enumeration Tool Detected | Proxy log analysis, Linux enumeration script review, terminal-history correlation, sandbox analysis | True Positive | [Read case study](LetsDefend/SOC123%E2%80%93Enumeration-Tool-Detected/README.md) |
@@ -13,7 +14,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | 53 | SOC121 – Proxy: Malicious Executable File Detected | Proxy log triage, URL/IP reputation, file relationships, sandbox analysis | True Positive | [Read case study](LetsDefend/SOC121-Proxy-Malicious-Executable-File-Detected/README.md) |
 | 51 | SOC118 – Internal Port Scan Activity | File reputation, endpoint process review, internal firewall port-scan correlation | True Positive | [Read case study](LetsDefend/SOC118-Internal-Port-Scan-Activity/README.md) |
 | 49 | SOC116 – DNS Hijacking Detected | VirusTotal triage, Python source analysis, hosts-file redirection, network correlation | True Positive | [Read case study](LetsDefend/SOC116-DNS-Hijacking-Detected/README.md) |
-| 48 | SOC107 – Privilege Escalation Detected (JuicyPotato) | Suspicious download, URL reputation, SYSTEM-level process analysis | True Positive | [Read case study](LetsDefend/SOC107-JuicyPotato-Privilege-Escalation/README.md) |
+| 48 | SOC107 – Privilege Escalation Detected (JuicyPotato) | Suspicious download, URL reputation, SYSTEM-level process analysis | True Positive | [Read case study](LetsDefend/SOC107-Privilege-Escalation-Detected/README.md) |
 | 47 | SOC115 – Wscript.exe Usage as Dropper | Script analysis and endpoint investigation | True Positive | [Read case study](LetsDefend/SOC115-Wscript.exe-Usage-as-Dropper/README.md) |
 | 45 | SOC114 – Malicious Attachment Detected | Phishing email review, malicious attachment/URL analysis, browser and endpoint evidence | True Positive | [Read case study](LetsDefend/SOC114-Malicious-Attachment-Detected/README.md) |
 | 44 | SOC113 – Suspicious hh.exe Usage | CHM file analysis, process investigation, file reputation, historical log review | False Positive | [Read case study](LetsDefend/SOC113-Suspicious-hh.exe-Usage/README.md) |
