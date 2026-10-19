@@ -11,7 +11,8 @@
 | MITRE ATT&CK (alert metadata) | `T1204` |
 | File Name | `phpshell.php` |
 | File Size | `113 bytes` |
-| File Hash (MD5) | `756215a64e7d43153298f1a5a5fde295` |
+| File Hash (MD5, alert metadata) | `756215a64e7d43153298f1a5a5fde295` |
+| SHA-256 (sample-analysis lookup) | `f1c5bed9560a1afe9d5575e923e480e7e8030e10bc3d7c0d842b1a64f49f8794` |
 | Host | `gitServer` (`172.16.20.4`) |
 | Device Action | **Allowed** |
 | Final Verdict | **True Positive** |
@@ -75,6 +76,8 @@ if(isset($_REQUEST['cmd'])){
 This is a functional command-execution web shell: it accepts a caller-controlled command through an HTTP request and passes it to `system()`. No authentication check is visible in the provided code.
 
 The YARA matches support the classification, while the code itself directly demonstrates the web-shell behavior. The reported strength of `0.75` is a rule-match strength and should not be interpreted as a 75% statistical probability.
+
+The SHA-256 sample-analysis lookup was also referenced by [Unit 42's research on CVE-2020-25213](https://unit42.paloaltonetworks.com/cve-2020-25213/), which discusses web-shell activity associated with exploitation of the WordPress File Manager vulnerability. This threat-intelligence context supports the web-shell assessment, but does not by itself prove that the same vulnerability was present or exploited on `gitServer`.
 
 ### 2.4. Correlation Summary
 
