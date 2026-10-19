@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 61 | SOC126 – Suspicious New Autorun Value Detected | Quasar RAT analysis, autorun persistence, Registry tracing settings, process/file and network activity | True Positive | [Read case study](LetsDefend/SOC126-Suspicious-New-Autorun-Value-Detected/README.md) |
 | 60 | SOC127 – SQL Injection Detected | Proxy log analysis, SQL injection payload review, playbook investigation | False Positive | [Read case study](LetsDefend/SOC127-SQL-Injection-Detected/README.md) |
 | 58 | SOC125 – Suspicious Rundll32 Activity | Suspicious rundll32 command, proxy log analysis, Emotet sandbox investigation, Registry proxy-setting modification | True Positive | [Read case study](LetsDefend/SOC125-Suspicious-Rundll32-Activity/README.md) |
 | 57 | SOC124 – Scheduled Task Created | Scheduled task review, file hash reputation, endpoint terminal history, historical log review | False Positive | [Read case study](LetsDefend/SOC124-Scheduled-Task-Created/README.md) |
