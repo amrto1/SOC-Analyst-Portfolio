@@ -7,6 +7,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
 | 69 | SOC133 – Suspicious Request to New Registered Domain | Firewall/Proxy log review, URL/IP reputation, WHOIS registration context, playbook assessment | False Positive | [Read case study](LetsDefend/SOC133-Suspicious-Request-to-New-Registered-Domain/README.md) |
+| 67 | SOC131 – Reverse TCP Backdoor Detected | Extracted-string analysis, Python reverse shell, C2 assessment, PowerShell downloader hypothesis | True Positive | [Read case study](LetsDefend/SOC131-Reverse-TCP-Backdoor-Detected/README.md) |
 | 66 | SOC102 – Proxy: Suspicious URL Detected | Proxy log review, URL/IP reputation, endpoint review, playbook assessment | False Positive | [Read case study](LetsDefend/SOC102-Proxy-Suspicious-URL-Detected/README.md) |
 | 64 | SOC130 – Event Log Cleared | PowerShell process review, file hash reputation, ANY.RUN behavior analysis, Event Log clearing playbook | False Positive | [Read case study](LetsDefend/SOC130-Event-Log-Cleared/README.md) |
 | 63 | SOC129 – Successful Local File Inclusion | LFI/path traversal, Proxy log analysis, HTTP 404 investigation, playbook assessment | True Positive | [Read case study](LetsDefend/SOC129-Successful-Local-File-Inclusion/README.md) |
