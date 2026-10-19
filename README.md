@@ -8,6 +8,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 |---:|---|---|---|---|
 | 64 | SOC130 – Event Log Cleared | PowerShell process review, file hash reputation, ANY.RUN behavior analysis, Event Log clearing playbook | False Positive | [Read case study](LetsDefend/SOC130-Event-Log-Cleared/README.md) |
 | 63 | SOC129 – Successful Local File Inclusion | LFI/path traversal, Proxy log analysis, HTTP 404 investigation, playbook assessment | True Positive | [Read case study](LetsDefend/SOC129-Successful-Local-File-Inclusion/README.md) |
+| 62 | SOC128 – Malicious File Upload Attempt | PHP web shell analysis, Filescan/YARA findings, Proxy-to-endpoint command correlation | True Positive | [Read case study](LetsDefend/SOC128-Malicious-File-Upload-Attempt/README.md) |
 | 61 | SOC126 – Suspicious New Autorun Value Detected | Quasar RAT analysis, autorun persistence, Registry tracing settings, process/file and network activity | True Positive | [Read case study](LetsDefend/SOC126-Suspicious-New-Autorun-Value-Detected/README.md) |
 | 60 | SOC127 – SQL Injection Detected | Proxy log analysis, SQL injection payload review, playbook investigation | False Positive | [Read case study](LetsDefend/SOC127-SQL-Injection-Detected/README.md) |
 | 58 | SOC125 – Suspicious Rundll32 Activity | Suspicious rundll32 command, proxy log analysis, Emotet sandbox investigation, Registry proxy-setting modification | True Positive | [Read case study](LetsDefend/SOC125-Suspicious-Rundll32-Activity/README.md) |
