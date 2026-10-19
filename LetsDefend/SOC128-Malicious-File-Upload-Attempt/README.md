@@ -84,7 +84,7 @@ The SHA-256 sample-analysis lookup was also referenced by [Unit 42's research on
 The evidence forms a consistent sequence:
 
 1. An HTTP request accessed `/srcCode/upload.php`.
-2. Subsequent requests targeted `/srcCode/phpshell.php` and supplied `whoami` and `cat /etc/passwd) through `cmd`.
+2. Subsequent requests targeted `/srcCode/phpshell.php` and supplied `whoami` and `cat /etc/passwd` through `cmd`.
 3. Endpoint terminal history recorded those same commands at the corresponding adjusted times.
 4. Filescan identified the PHP sample as a confirmed threat, and its extracted code contains a direct call to `system($cmd)`.
 
