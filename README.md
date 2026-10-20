@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 71 | SOC134 – Suspicious WMI Activity | WMI command analysis, endpoint process review, historical Proxy/C2 evidence, playbook assessment | True Positive | [Read case study](LetsDefend/SOC134-Suspicious-WMI-Activity/README.md) |
 | 69 | SOC133 – Suspicious Request to New Registered Domain | Firewall/Proxy log review, URL/IP reputation, WHOIS registration context, playbook assessment | False Positive | [Read case study](LetsDefend/SOC133-Suspicious-Request-to-New-Registered-Domain/README.md) |
 | 67 | SOC131 – Reverse TCP Backdoor Detected | Extracted-string analysis, Python reverse shell, C2 assessment, PowerShell downloader hypothesis | True Positive | [Read case study](LetsDefend/SOC131-Reverse-TCP-Backdoor-Detected/README.md) |
 | 66 | SOC102 – Proxy: Suspicious URL Detected | Proxy log review, URL/IP reputation, endpoint review, playbook assessment | False Positive | [Read case study](LetsDefend/SOC102-Proxy-Suspicious-URL-Detected/README.md) |
