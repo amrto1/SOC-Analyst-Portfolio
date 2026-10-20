@@ -6,7 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
-| 72 | SOC135 – Multiple FTP Connection Attempt | FTP authentication log review, password-guessing behavior, playbook assessment | True Positive | [Read case study](LetsDefend/SOC135-Multiple-FTP-Connection-Attempt/README.md) |
+| 74 | SOC136 – Data Leak via Mailbox Forwarding Detected | Email security review, credential disclosure, external recipient, threat-intelligence context | True Positive | [Read case study](LetsDefend/SOC136-Data-Leak-via-Mailbox-Forwarding-Detected/README.md) |\n| 72 | SOC135 – Multiple FTP Connection Attempt | FTP authentication log review, password-guessing behavior, playbook assessment | True Positive | [Read case study](LetsDefend/SOC135-Multiple-FTP-Connection-Attempt/README.md) |
 | 71 | SOC134 – Suspicious WMI Activity | WMI command analysis, endpoint process review, historical Proxy/C2 evidence, playbook assessment | True Positive | [Read case study](LetsDefend/SOC134-Suspicious-WMI-Activity/README.md) |
 | 69 | SOC133 – Suspicious Request to New Registered Domain | Firewall/Proxy log review, URL/IP reputation, WHOIS registration context, playbook assessment | False Positive | [Read case study](LetsDefend/SOC133-Suspicious-Request-to-New-Registered-Domain/README.md) |
 | 67 | SOC131 – Reverse TCP Backdoor Detected | Extracted-string analysis, Python reverse shell, C2 assessment, PowerShell downloader hypothesis | True Positive | [Read case study](LetsDefend/SOC131-Reverse-TCP-Backdoor-Detected/README.md) |
