@@ -1,4 +1,3 @@
-| 92 | SOC145 – Ransomware Detected | Ransomware triage, backup deletion attempts, BCD recovery changes, Registry and file evidence | True Positive | [Read case study](LetsDefend/SOC145-Ransomware-Detected/README.md) |
 # SOC Analyst Portfolio
 
 A collection of hands-on SOC investigations and blue-team labs.
@@ -7,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 92 | SOC145 – Ransomware Detected | Ransomware triage, backup deletion attempts, BCD recovery changes, Registry and file evidence | True Positive | [Read case study](LetsDefend/SOC145-Ransomware-Detected/README.md) |
 | 91 | SOC144 – New Scheduled Task Created | Python script analysis, executable download, scheduled-task persistence, Proxy correlation | True Positive | [Read case study](LetsDefend/SOC144-New-Scheduled-Task-Created/README.md) |
 | 81 | SOC134 – Suspicious WMI Activity (Exchange Server) | Executable triage, batch/WMIC analysis, Registry changes, Startup persistence, C2 review | True Positive | [Read case study](LetsDefend/SOC134-Suspicious-WMI-Activity-Event-81/README.md) |
 | 79 | SOC119 – Proxy: Malicious Executable File Detected | BloodHound URL review, Proxy logs, dual-use tool assessment, containment and playbook review | False Positive | [Read case study](LetsDefend/SOC119-Proxy-Malicious-Executable-File-Detected/README.md) |
