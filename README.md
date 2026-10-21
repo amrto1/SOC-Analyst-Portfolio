@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 79 | SOC119 – Proxy: Malicious Executable File Detected | BloodHound URL review, Proxy logs, dual-use tool assessment, containment and playbook review | False Positive | [Read case study](LetsDefend/SOC119-Proxy-Malicious-Executable-File-Detected/README.md) |
 | 78 | SOC139 – Meterpreter or Empire Activity | Malicious file reputation, Firewall/C2 correlation, contacted-IP analysis, playbook assessment | True Positive | [Read case study](LetsDefend/SOC139-Meterpreter-or-Empire-Activity/README.md) |
 | 74 | SOC136 – Data Leak via Mailbox Forwarding Detected | Email security review, credential disclosure, external recipient, threat-intelligence context | True Positive | [Read case study](LetsDefend/SOC136-Data-Leak-via-Mailbox-Forwarding-Detected/README.md) |
 | 72 | SOC135 – Multiple FTP Connection Attempt | FTP authentication log review, password-guessing behavior, playbook assessment | True Positive | [Read case study](LetsDefend/SOC135-Multiple-FTP-Connection-Attempt/README.md) |
