@@ -1,4 +1,4 @@
-# SOC Analyst Portfolio
+| 92 | SOC145 – Ransomware Detected | Ransomware triage, backup deletion attempts, BCD recovery changes, Registry and file evidence | True Positive | [Read case study](LetsDefend/SOC145-Ransomware-Detected/README.md) |\n# SOC Analyst Portfolio
 
 A collection of hands-on SOC investigations and blue-team labs.
 
