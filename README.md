@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 81 | SOC134 – Suspicious WMI Activity (Exchange Server) | Executable triage, batch/WMIC analysis, Registry changes, Startup persistence, C2 review | True Positive | [Read case study](LetsDefend/SOC134-Suspicious-WMI-Activity-Event-81/README.md) |
 | 79 | SOC119 – Proxy: Malicious Executable File Detected | BloodHound URL review, Proxy logs, dual-use tool assessment, containment and playbook review | False Positive | [Read case study](LetsDefend/SOC119-Proxy-Malicious-Executable-File-Detected/README.md) |
 | 78 | SOC139 – Meterpreter or Empire Activity | Malicious file reputation, Firewall/C2 correlation, contacted-IP analysis, playbook assessment | True Positive | [Read case study](LetsDefend/SOC139-Meterpreter-or-Empire-Activity/README.md) |
 | 74 | SOC136 – Data Leak via Mailbox Forwarding Detected | Email security review, credential disclosure, external recipient, threat-intelligence context | True Positive | [Read case study](LetsDefend/SOC136-Data-Leak-via-Mailbox-Forwarding-Detected/README.md) |
