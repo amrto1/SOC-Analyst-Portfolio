@@ -20,9 +20,7 @@ VirusTotal detected the sample with **58 out of 70 engines** at the time of the 
 
 **Sample-name note:** The alert lists `launch.exe`, while the referenced ANY.RUN sample is displayed as `lunch.bin` / `lunch.bin.exe`. The available alert details do not include a hash to independently confirm that both names refer to the same file.
 
-**ANY.RUN reports for the sample hash:**
-- [Alternate public ANY.RUN analysis (February 2026)](https://any.run/report/4ea1f2ecf7eb12896f2cbf8683dae8546d2b8dc43cf7710d68ce99e127c0a966/9467526b-1d6f-45fb-9f08-e95348bb7383) — same SHA256 as the report analyzed above, but a separate sandbox run.
-- [Earlier ANY.RUN run (August 2022)](https://any.run/report/4ea1f2ecf7eb12896f2cbf8683dae8546d2b8dc43cf7710d68ce99e127c0a966/3070b41f-aa81-437a-97f3-2bbe8b970111).
+**ANY.RUN Analysis:** [Open the public sample report](https://any.run/report/4ea1f2ecf7eb12896f2cbf8683dae8546d2b8dc43cf7710d68ce99e127c0a966/9467526b-1d6f-45fb-9f08-e95348bb7383)
 
 ## 3. Processes
 
