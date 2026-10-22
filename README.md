@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 114 | SOC164 – Suspicious Mshta Behavior | HTA execution, mshta-to-PowerShell process correlation, obfuscated download-and-execute behavior | True Positive | [Read case study](LetsDefend/SOC164-Suspicious-Mshta-Behavior/README.md) |
 | 113 | SOC163 – Suspicious Certutil.exe Usage | LOLBin abuse, tool downloads, network scanning, Terminal History correlation | True Positive | [Read case study](LetsDefend/SOC163-Suspicious-Certutil-Usage/README.md) |
 | 92 | SOC145 – Ransomware Detected | Ransomware triage, backup deletion attempts, BCD recovery changes, Registry and file evidence | True Positive | [Read case study](LetsDefend/SOC145-Ransomware-Detected/README.md) |
 | 91 | SOC144 – New Scheduled Task Created | Python script analysis, executable download, scheduled-task persistence, Proxy correlation | True Positive | [Read case study](LetsDefend/SOC144-New-Scheduled-Task-Created/README.md) |
