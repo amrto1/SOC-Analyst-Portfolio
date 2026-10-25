@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 189 | SOC227 – Microsoft SharePoint Server Elevation of Privilege | CVE-2023-29357, SharePoint API requests, IP reputation, HTTP log review | True Positive | [Read case study](LetsDefend/SOC227-SharePoint-CVE-2023-29357-Exploitation/README.md) |
 | 161 | SOC211 – Utilman.exe Winlogon Exploit Attempt | Utilman replacement, Winlogon abuse, privileged local account creation, Startup persistence lead | True Positive | [Read case study](LetsDefend/SOC211-Utilman-Exe-Winlogon-Exploit-Attempt/README.md) |
 | 114 | SOC164 – Suspicious Mshta Behavior | HTA execution, mshta-to-PowerShell process correlation, obfuscated download-and-execute behavior | True Positive | [Read case study](LetsDefend/SOC164-Suspicious-Mshta-Behavior/README.md) |
 | 113 | SOC163 – Suspicious Certutil.exe Usage | LOLBin abuse, tool downloads, network scanning, Terminal History correlation | True Positive | [Read case study](LetsDefend/SOC163-Suspicious-Certutil-Usage/README.md) |
