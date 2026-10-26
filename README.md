@@ -6,6 +6,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 89 | SOC142 – Multiple HTTP 500 Response | SQL injection attempts, HTTP 500/200 response analysis, PHP web shell, attempted Netcat reverse shell | True Positive | [Read case study](LetsDefend/SOC142-Multiple-HTTP-500-Response/README.md) |
 | 234 | SOC176 – RDP Brute Force Detected | RDP password guessing, Windows logon events, successful remote access, post-login discovery, playbook assessment | True Positive | [Read case study](LetsDefend/SOC176-RDP-Brute-Force-Detected/README.md) |
 | 197 | SOC235 – Atlassian Confluence Broken Access Control 0-Day CVE-2023-22515 | CVE-2023-22515, Confluence setup endpoints, proxy-log correlation, source IP reputation | True Positive | [Read case study](LetsDefend/SOC235-Confluence-CVE-2023-22515/README.md) |
 | 189 | SOC227 – Microsoft SharePoint Server Elevation of Privilege | CVE-2023-29357, SharePoint API requests, IP reputation, HTTP log review | True Positive | [Read case study](LetsDefend/SOC227-SharePoint-CVE-2023-29357-Exploitation/README.md) |
