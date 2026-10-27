@@ -89,9 +89,18 @@ The investigation did not establish that CVE-2022-41082 exploitation or PowerShe
 
 ## 4. Evidence
 
-Screenshots referenced in this case:
+### Log Management
 
-- `screenshots/log-management.png` — Overview of the three requests and their timestamps.
-- `screenshots/raw-log1.png` — Raw log for the first Autodiscover request.
-- `screenshots/raw-log2.png` — Raw log for the request containing the EWS path.
-- `screenshots/raw-log3.png` — Raw log for the request containing the PowerShell-related parameter and the recorded blocked action.
+![Log Management – overview of the three blocked requests](screenshots/log-management.png)
+
+### Raw Log 1 – Autodiscover Request
+
+![Raw Log 1 – first Autodiscover request](screenshots/raw-log1.png)
+
+### Raw Log 2 – EWS Path
+
+![Raw Log 2 – Autodiscover request containing the EWS path](screenshots/raw-log2.png)
+
+### Raw Log 3 – PowerShell Indicator
+
+![Raw Log 3 – request containing the PowerShell-related parameter and blocked action](screenshots/raw-log3.png)
