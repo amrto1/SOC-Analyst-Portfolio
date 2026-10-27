@@ -4,6 +4,8 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 ## LetsDefend
 
+| 125 | SOC175 – PowerShell Found in Requested URL – Possible CVE-2022-41082 Exploitation | Exchange Autodiscover request analysis, PowerShell indicator, threat intelligence, blocked requests | True Positive (Unsuccessful Attack) | [Read case study](LetsDefend/SOC175-PowerShell-Found-in-Requested-URL/README.md) |
+
 | 94 | SOC147 – SSH Scan Activity | Nmap network scan, internal SSH-port connections, planned-scan email correlation, playbook review | False Positive | [Read case study](LetsDefend/SOC147-SSH-Scan-Activity/README.md) |
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
