@@ -4,6 +4,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 ## LetsDefend
 
+| 94 | SOC147 – SSH Scan Activity | Nmap network scan, internal SSH-port connections, planned-scan email correlation, playbook review | False Positive | [Read case study](LetsDefend/SOC147-SSH-Scan-Activity/README.md) |
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
 | 90 | SOC143 – Password Stealer Detected | HTML credential phishing, malicious URL, email-delivery review, sandbox network indicators | True Positive | [Read case study](LetsDefend/SOC143-Password-Stealer-Detected/README.md) |
