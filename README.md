@@ -9,6 +9,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | 94 | SOC147 – SSH Scan Activity | Nmap network scan, internal SSH-port connections, planned-scan email correlation, playbook review | False Positive | [Read case study](LetsDefend/SOC147-SSH-Scan-Activity/README.md) |
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 208 | SOC246 – Forced Authentication Detected | Repeated login POST requests, firewall/proxy correlation, successful admin login, Tier 2 escalation | True Positive | [Read case study](LetsDefend/SOC246-Forced-Authentication-Detected/README.md) |
 | 90 | SOC143 – Password Stealer Detected | HTML credential phishing, malicious URL, email-delivery review, sandbox network indicators | True Positive | [Read case study](LetsDefend/SOC143-Password-Stealer-Detected/README.md) |
 | 89 | SOC142 – Multiple HTTP 500 Response | SQL injection attempts, HTTP 500/200 response analysis, PHP web shell, attempted Netcat reverse shell | True Positive | [Read case study](LetsDefend/SOC142-Multiple-HTTP-500-Response/README.md) |
 | 234 | SOC176 – RDP Brute Force Detected | RDP password guessing, Windows logon events, successful remote access, post-login discovery, playbook assessment | True Positive | [Read case study](LetsDefend/SOC176-RDP-Brute-Force-Detected/README.md) |
