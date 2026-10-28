@@ -4,16 +4,12 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 ## LetsDefend
 
-| 125 | SOC175 – PowerShell Found in Requested URL – Possible CVE-2022-41082 Exploitation | Exchange Autodiscover request analysis, PowerShell indicator, threat intelligence, blocked requests | True Positive (Unsuccessful Attack) | [Read case study](LetsDefend/SOC175-PowerShell-Found-in-Requested-URL/README.md) |
 
-| 94 | SOC147 – SSH Scan Activity | Nmap network scan, internal SSH-port connections, planned-scan email correlation, playbook review | False Positive | [Read case study](LetsDefend/SOC147-SSH-Scan-Activity/README.md) |
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
+| 234 | SOC176 – RDP Brute Force Detected | RDP password guessing, Windows logon events, successful remote access, post-login discovery, playbook assessment | True Positive | [Read case study](LetsDefend/SOC176-RDP-Brute-Force-Detected/README.md) |
 | 214 | SOC251 – Quishing Detected (QR Code Phishing) | QR code extraction, IPFS phishing page, credential-submission source code, IP reputation and containment playbook | True Positive | [Read case study](LetsDefend/SOC251-Quishing-Detected/README.md) |
 | 208 | SOC246 – Forced Authentication Detected | Repeated login POST requests, firewall/proxy correlation, successful admin login, Tier 2 escalation | True Positive | [Read case study](LetsDefend/SOC246-Forced-Authentication-Detected/README.md) |
-| 90 | SOC143 – Password Stealer Detected | HTML credential phishing, malicious URL, email-delivery review, sandbox network indicators | True Positive | [Read case study](LetsDefend/SOC143-Password-Stealer-Detected/README.md) |
-| 89 | SOC142 – Multiple HTTP 500 Response | SQL injection attempts, HTTP 500/200 response analysis, PHP web shell, attempted Netcat reverse shell | True Positive | [Read case study](LetsDefend/SOC142-Multiple-HTTP-500-Response/README.md) |
-| 234 | SOC176 – RDP Brute Force Detected | RDP password guessing, Windows logon events, successful remote access, post-login discovery, playbook assessment | True Positive | [Read case study](LetsDefend/SOC176-RDP-Brute-Force-Detected/README.md) |
 | 197 | SOC235 – Atlassian Confluence Broken Access Control 0-Day CVE-2023-22515 | CVE-2023-22515, Confluence setup endpoints, proxy-log correlation, source IP reputation | True Positive | [Read case study](LetsDefend/SOC235-Confluence-CVE-2023-22515/README.md) |
 | 189 | SOC227 – Microsoft SharePoint Server Elevation of Privilege | CVE-2023-29357, SharePoint API requests, IP reputation, HTTP log review | True Positive | [Read case study](LetsDefend/SOC227-SharePoint-CVE-2023-29357-Exploitation/README.md) |
 | 161 | SOC211 – Utilman.exe Winlogon Exploit Attempt | Utilman replacement, Winlogon abuse, privileged local account creation, Startup persistence lead | True Positive | [Read case study](LetsDefend/SOC211-Utilman-Exe-Winlogon-Exploit-Attempt/README.md) |
@@ -21,6 +17,8 @@ A collection of hands-on SOC investigations and blue-team labs.
 | 113 | SOC163 – Suspicious Certutil.exe Usage | LOLBin abuse, tool downloads, network scanning, Terminal History correlation | True Positive | [Read case study](LetsDefend/SOC163-Suspicious-Certutil-Usage/README.md) |
 | 92 | SOC145 – Ransomware Detected | Ransomware triage, backup deletion attempts, BCD recovery changes, Registry and file evidence | True Positive | [Read case study](LetsDefend/SOC145-Ransomware-Detected/README.md) |
 | 91 | SOC144 – New Scheduled Task Created | Python script analysis, executable download, scheduled-task persistence, Proxy correlation | True Positive | [Read case study](LetsDefend/SOC144-New-Scheduled-Task-Created/README.md) |
+| 90 | SOC143 – Password Stealer Detected | HTML credential phishing, malicious URL, email-delivery review, sandbox network indicators | True Positive | [Read case study](LetsDefend/SOC143-Password-Stealer-Detected/README.md) |
+| 89 | SOC142 – Multiple HTTP 500 Response | SQL injection attempts, HTTP 500/200 response analysis, PHP web shell, attempted Netcat reverse shell | True Positive | [Read case study](LetsDefend/SOC142-Multiple-HTTP-500-Response/README.md) |
 | 81 | SOC134 – Suspicious WMI Activity (Exchange Server) | Executable triage, batch/WMIC analysis, Registry changes, Startup persistence, C2 review | True Positive | [Read case study](LetsDefend/SOC134-Suspicious-WMI-Activity-Event-81/README.md) |
 | 79 | SOC119 – Proxy: Malicious Executable File Detected | BloodHound URL review, Proxy logs, dual-use tool assessment, containment and playbook review | False Positive | [Read case study](LetsDefend/SOC119-Proxy-Malicious-Executable-File-Detected/README.md) |
 | 78 | SOC139 – Meterpreter or Empire Activity | Malicious file reputation, Firewall/C2 correlation, contacted-IP analysis, playbook assessment | True Positive | [Read case study](LetsDefend/SOC139-Meterpreter-or-Empire-Activity/README.md) |
