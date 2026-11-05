@@ -2,6 +2,12 @@
 
 A collection of hands-on SOC investigations and blue-team labs.
 
+## CyberDefenders
+
+| Lab | Focus | Write-up |
+|---|---|---|
+| JetBrains TeamCity | CVE-2024-27198, PCAP analysis, malicious plugin upload, JSP web shell, command execution, credential collection, Docker host-access attempt | [Read case study](CyberDefenders/JetBrains-TeamCity/README.md) |
+
 ## LetsDefend
 
 
