@@ -97,6 +97,10 @@ The `>` operator writes the supplied string to the file, creating it or overwrit
 
 **Answer:** `a1l4m:youarecompromised`
 
+The following Wireshark filter narrows the packet list to requests containing both the web-shell command parameter and the credential-related string. The selected packet contains the URL-encoded command body.
+
+![Credential command filter in Wireshark](screenshots/credential-command-filter.png)
+
 ![Credential-writing command](screenshots/07-credential-file-command.png)
 
 ### 8. MITRE ATT&CK Data Manipulation Sub-technique
@@ -117,9 +121,23 @@ docker run --rm -it -v /:/host ubuntu chroot /host
 
 It launches an Ubuntu container, bind-mounts the host root filesystem at `/host`, and attempts to change the container's root directory to that mount using `chroot`. This is consistent with an attempt to access the host environment. The PCAP confirms the command was issued, not that the attempt succeeded.
 
+The following display filter was used to locate HTTP requests containing both `cmd` and `docker`:
+
+```wireshark
+http contains "cmd" && http contains "docker"
+```
+
+![Docker command filter in Wireshark](screenshots/docker-filter.png)
+
 ![Docker command in HTTP request](screenshots/09-docker-command-request.png)
 
 ![Decoded Docker command](screenshots/10-docker-command-decoded.png)
+
+### 10. HTTP Stream Inspection
+
+Following the suspicious plugin-upload packet through **Follow → HTTP Stream** exposes the reconstructed HTTP exchange and multipart upload content. This is useful for validating the uploaded archive name and examining the request body rather than relying only on the packet-list summary.
+
+![HTTP stream inspection of the plugin upload](screenshots/http-stream.png)
 
 ## Indicators of Compromise
 
@@ -167,4 +185,4 @@ This investigation demonstrates the importance of correlating HTTP requests and 
 
 ## Screenshots
 
-Add the evidence images to the adjacent `screenshots/` directory using the filenames referenced above. The directory is already present in this repository.
+Place the evidence images in the adjacent `screenshots/` directory using the filenames referenced throughout this report.
