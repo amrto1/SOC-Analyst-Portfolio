@@ -36,7 +36,7 @@ The suspicious request targeted `/admin/pluginUpload.html`.
 
 **Answer:** `23.158.56.196`
 
-![Plugin upload request](screenshots/01-plugin-upload-request.png)
+![Plugin upload request](screenshots/plugin-upload-request.png)
 
 ### 2. TeamCity Server Version
 
@@ -48,7 +48,7 @@ The response from the TeamCity REST server endpoint disclosed the build informat
 
 **Answer:** `2023.11.3`
 
-![TeamCity version](screenshots/02-teamcity-version.png)
+![TeamCity version](screenshots/teamcity-version.png)
 
 ### 3. Exploited CVE
 
@@ -56,7 +56,7 @@ The crafted alternative-path requests allowed access to protected REST endpoints
 
 **Answer:** `CVE-2024-27198`
 
-![CVE identification](screenshots/03-cve-identification.png)
+![CVE identification](screenshots/cve-identification.png)
 
 ### 4. Privileged Account Credentials
 
@@ -65,7 +65,7 @@ A POST request to the users REST endpoint contained JSON data creating a new acc
 **Account:** `c91oyemw`  
 **Password:** `CL5vzdwLuK`
 
-![SYSTEM_ADMIN account creation](screenshots/04-admin-account-created.png)
+![SYSTEM_ADMIN account creation](screenshots/admin-account-created.png)
 
 ### 5. Uploaded File
 
@@ -75,7 +75,7 @@ The multipart form data in the plugin-upload HTTP stream revealed the uploaded a
 
 The archive contained a JAR plugin with JSP web-shell functionality. The shell accepted a `cmd` parameter and invoked operating-system processes.
 
-![Uploaded plugin archive](screenshots/05-uploaded-plugin.png)
+![Uploaded plugin archive](screenshots/file-uploaded.png)
 
 ### 6. First Web-Shell Command
 
@@ -83,7 +83,7 @@ I searched HTTP requests for the web-shell command parameter and reviewed the ea
 
 **Answer:** `2024-06-30 08:03`
 
-![First web-shell command](screenshots/06-first-command.png)
+![First web-shell command](screenshots/first-command.png)
 
 ### 7. Credentials Written to a File
 
@@ -101,7 +101,7 @@ The following Wireshark filter narrows the packet list to requests containing bo
 
 ![Credential command filter in Wireshark](screenshots/credential-command-filter.png)
 
-![Credential-writing command](screenshots/07-credential-file-command.png)
+![Credential-writing command](screenshots/credential-file-command.png)
 
 ### 8. MITRE ATT&CK Data Manipulation Sub-technique
 
@@ -109,7 +109,7 @@ The command modifies data stored in a file.
 
 **Answer:** [T1565.001 – Stored Data Manipulation](https://attack.mitre.org/techniques/T1565/001/)
 
-![MITRE technique](screenshots/08-mitre-data-manipulation.png)
+![MITRE technique](screenshots/mitre-data-manipulation.png)
 
 ### 9. Docker Command
 
@@ -129,9 +129,9 @@ http contains "cmd" && http contains "docker"
 
 ![Docker command filter in Wireshark](screenshots/docker-filter.png)
 
-![Docker command in HTTP request](screenshots/09-docker-command-request.png)
+![Docker command in HTTP request](screenshots/docker-command-request.png)
 
-![Decoded Docker command](screenshots/10-docker-command-decoded.png)
+![Decoded Docker command](screenshots/docker-command-decoded.png)
 
 ### 10. HTTP Stream Inspection
 
