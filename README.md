@@ -10,6 +10,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | RetailBreach | PCAP analysis, Gobuster enumeration, stored XSS, session-cookie theft, administrative session reuse, directory traversal | [Read case study](CyberDefenders/RetailBreach/README.md) |
 | AWS CloudTrail Investigation | Splunk, authentication-failure analysis, S3 object access, bucket security configuration, IAM user creation and group assignment | [Read case study](CyberDefenders/AWS-CloudTrail-Investigation/README.md) |
 | PoisonedCredentials | Wireshark, LLMNR/NBNS poisoning, SMB authentication, NTLMv2 analysis | [Read case study](CyberDefenders/PoisonedCredentials/README.md) |
+| PsExec Lateral Movement | Wireshark, SMB2, NTLMSSP authentication, PsExec service deployment, ADMIN$ and IPC$ shares | [Read case study](CyberDefenders/PsExec-Lateral-Movement/README.md) |
 
 ## LetsDefend
 
