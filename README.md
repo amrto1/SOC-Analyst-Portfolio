@@ -9,9 +9,9 @@ A collection of hands-on SOC investigations and blue-team labs.
 | JetBrains TeamCity | CVE-2024-27198, PCAP analysis, malicious plugin upload, JSP web shell, command execution, credential collection, Docker host-access attempt | [Read case study](CyberDefenders/JetBrains-TeamCity/README.md) |
 | RetailBreach | PCAP analysis, Gobuster enumeration, stored XSS, session-cookie theft, administrative session reuse, directory traversal | [Read case study](CyberDefenders/RetailBreach/README.md) |
 | AWS CloudTrail Investigation | Splunk, authentication-failure analysis, S3 object access, bucket security configuration, IAM user creation and group assignment | [Read case study](CyberDefenders/AWS-CloudTrail-Investigation/README.md) |
+| PoisonedCredentials | Wireshark, LLMNR/NBNS poisoning, SMB authentication, NTLMv2 analysis | [Read case study](CyberDefenders/PoisonedCredentials/README.md) |
 
 ## LetsDefend
-
 
 | Event ID | Alert | Focus | Verdict | Write-up |
 |---:|---|---|---|---|
