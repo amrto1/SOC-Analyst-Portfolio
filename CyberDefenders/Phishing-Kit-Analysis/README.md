@@ -86,7 +86,7 @@ The local `log.txt` file contains three previously collected seed-phrase entries
 
 ### Q6. Could you please provide the seed phrase associated with the most recent phishing incident?
 
-**Answer: The 12-word recovery phrase in the latest log entry.**
+**Answer:** `father also recycle embody balance concert mechanic believe owner pair muffin hockey`
 
 **Analysis:**
 
@@ -102,7 +102,7 @@ file_put_contents(
 
 The `FILE_APPEND` flag adds each new entry to the end of the existing file. The latest entry therefore contains the phrase associated with the most recent recorded incident.
 
-The actual recovery phrase is intentionally omitted from this public report because it is a wallet recovery credential.
+The recovered phrase from the latest log entry is shown above as the answer for this lab.
 
 ### Q7. Which medium was used for credential dumping?
 
@@ -125,13 +125,13 @@ The message includes the wallet name, submitted phrase, victim IP address, geogr
 
 ### Q8. What is the token for accessing the channel?
 
-**Answer: Telegram Bot API token identified in `metamask.php`.**
+**Answer:** `5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10`
 
 **Analysis:**
 
 The token is assigned to the `$token` variable inside `sendTel()` and is used to authenticate requests to the Telegram Bot API.
 
-The original token is redacted from this public report because it is an authentication credential.
+The token value above was recovered from the `$token` variable in `metamask.php`.
 
 ### Q9. What is the Chat ID for the phisher's channel?
 
@@ -173,4 +173,4 @@ A comment embedded in the PHP source contains a message signed with the alias `j
 
 The investigation identified a phishing kit impersonating MetaMask to harvest cryptocurrency wallet recovery phrases. Its PHP backend uses Sypex Geo to retrieve location information associated with victims' IP addresses, sends collected data to a Telegram bot, and appends submitted phrases to a local log file.
 
-The analysis found three previously collected recovery phrases and identified additional artifacts, including the Telegram Chat ID and a developer alias. Sensitive recovery-phrase and bot-token values have been excluded from this public write-up.
+The analysis found three previously collected recovery phrases and identified additional artifacts, including the Telegram Chat ID and a developer alias. The recovered seed phrase and Telegram Bot API token are documented above as lab findings.
