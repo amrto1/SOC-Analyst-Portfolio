@@ -24,7 +24,7 @@ The `metamask.php` file explicitly identifies the targeted wallet in the message
 
 This indicates that the phishing kit impersonates MetaMask when requesting the victim's recovery phrase.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q2. What is the file name that has the code for the phishing kit?
 
@@ -34,7 +34,7 @@ This indicates that the phishing kit impersonates MetaMask when requesting the v
 
 The `metamask.php` file contains the backend PHP code responsible for processing submitted data, collecting victim information, sending the collected information to a Telegram bot, and storing submitted recovery phrases locally.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q3. In which language was the kit written?
 
@@ -44,7 +44,7 @@ The `metamask.php` file contains the backend PHP code responsible for processing
 
 The phishing kit's backend is written in PHP. This is evident from the PHP syntax and functions used throughout the source code, including `$_POST`, `$_SERVER`, `file_get_contents()`, `json_decode()`, and `file_put_contents()`.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q4. What service does the kit use to retrieve the victim's machine information?
 
@@ -70,7 +70,7 @@ $city = $array->city->name_en;
 
 This service provides geographic information associated with the victim's IP address, allowing the operator to identify the victim's approximate location.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q5. How many seed phrases were already collected?
 
@@ -80,7 +80,7 @@ This service provides geographic information associated with the victim's IP add
 
 The local `log.txt` file contains three previously collected seed phrases, indicating that the kit had already captured three recovery phrases before the investigation.
 
-**Evidence:** [logs.png](screenshots/logs.png)
+**Evidence:**\n\n![Collected log entries](screenshots/logs.png)
 
 ### Q6. Could you please provide the seed phrase associated with the most recent phishing incident?
 
@@ -102,7 +102,7 @@ The `FILE_APPEND` flag ensures that new entries are added to the end of the exis
 
 The actual recovery phrase is intentionally omitted from this public report to avoid exposing wallet recovery credentials.
 
-**Evidence:** [logs.png](screenshots/logs.png)
+**Evidence:**\n\n![Collected log entries](screenshots/logs.png)
 
 ### Q7. Which medium was used for credential dumping?
 
@@ -125,7 +125,7 @@ file_get_contents($filename);
 
 The message contains the wallet name, submitted recovery phrase, victim's IP address, geographic information, and User-Agent. This confirms that Telegram is used as the external channel for credential exfiltration.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q8. What is the token for accessing the channel?
 
@@ -137,7 +137,7 @@ The Telegram Bot API token is assigned to the `$token` variable inside the `send
 
 The original token is intentionally redacted from this public report because it is an authentication credential.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q9. What is the Chat ID for the phisher's channel?
 
@@ -153,7 +153,7 @@ $id = "5442785564";
 
 This value identifies the destination chat to which the phishing kit sends the collected information.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ### Q10. What are the allies of the phish kit developer?
 
@@ -176,7 +176,7 @@ j1j1b1s@m3r0
 
 The signature reveals the alias `j1j1b1s@m3r0`, which serves as a potential identifier associated with the phishing kit developer.
 
-**Evidence:** [code.png](screenshots/code.png)
+**Evidence:**\n\n![PHP source code](screenshots/code.png)
 
 ---
 
