@@ -11,6 +11,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | AWS CloudTrail Investigation | Splunk, authentication-failure analysis, S3 object access, bucket security configuration, IAM user creation and group assignment | [Read case study](CyberDefenders/AWS-CloudTrail-Investigation/README.md) |
 | PoisonedCredentials | Wireshark, LLMNR/NBNS poisoning, SMB authentication, NTLMv2 analysis | [Read case study](CyberDefenders/PoisonedCredentials/README.md) |
 | PsExec Lateral Movement | Wireshark, SMB2, NTLMSSP authentication, PsExec service deployment, ADMIN$ and IPC$ shares | [Read case study](CyberDefenders/PsExec-Lateral-Movement/README.md) |
+| Web Server Compromise | Wireshark, HTTP traffic analysis, Gobuster enumeration, Apache Tomcat Manager, malicious WAR upload, reverse shell and Cron persistence | [Read case study](CyberDefenders/Web-Server-Compromise/README.md) |
 
 ## LetsDefend
 
