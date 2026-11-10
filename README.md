@@ -6,17 +6,16 @@ A collection of hands-on SOC investigations and blue-team labs.
 
 | Lab | Focus | Write-up |
 |---|---|---|
-| JetBrains TeamCity | CVE-2024-27198, PCAP analysis, malicious plugin upload, JSP web shell, command execution, credential collection, Docker host-access attempt | [Read case study](CyberDefenders/JetBrains-TeamCity/README.md) |
+| JetBrains | CVE-2024-27198, PCAP analysis, malicious plugin upload, JSP web shell, command execution, credential collection, Docker host-access attempt | [Read case study](CyberDefenders/JetBrains-TeamCity/README.md) |
 | RetailBreach | PCAP analysis, Gobuster enumeration, stored XSS, session-cookie theft, administrative session reuse, directory traversal | [Read case study](CyberDefenders/RetailBreach/README.md) |
-| AWS CloudTrail Investigation | Splunk, authentication-failure analysis, S3 object access, bucket security configuration, IAM user creation and group assignment | [Read case study](CyberDefenders/AWS-CloudTrail-Investigation/README.md) |
+| AWSRaid | Splunk, authentication-failure analysis, S3 object access, bucket security configuration, IAM user creation and group assignment | [Read case study](CyberDefenders/AWS-CloudTrail-Investigation/README.md) |
 | PoisonedCredentials | Wireshark, LLMNR/NBNS poisoning, SMB authentication, NTLMv2 analysis | [Read case study](CyberDefenders/PoisonedCredentials/README.md) |
-| PsExec Lateral Movement | Wireshark, SMB2, NTLMSSP authentication, PsExec service deployment, ADMIN$ and IPC$ shares | [Read case study](CyberDefenders/PsExec-Lateral-Movement/README.md) |
-| Yellow Cockatoo Malware Investigation | VirusTotal analysis, Yellow Cockatoo attribution, DLL identification, malware timestamps, dropped AppData artifact, C2 infrastructure | [Read case study](CyberDefenders/Yellow-Cockatoo-Malware-Investigation/README.md) |
-| IcedID Malware Investigation | VirusTotal analysis, IcedID artifacts, GIF delivery infrastructure, domain registrar pivot, MITRE ATT&CK attribution, URLDownloadToFileA behavior | [Read case study](CyberDefenders/IcedID-Malware-Investigation/README.md) |
+| PsExecHunt | Wireshark, SMB2, NTLMSSP authentication, PsExec service deployment, ADMIN$ and IPC$ shares | [Read case study](CyberDefenders/PsExec-Lateral-Movement/README.md) |
+| Tomcat Takeover | Wireshark, HTTP traffic analysis, Gobuster enumeration, Apache Tomcat Manager, malicious WAR upload, reverse shell and Cron persistence | [Read case study](CyberDefenders/Web-Server-Compromise/README.md) |
+| GrabThePhisher | PHP source-code analysis, MetaMask seed-phrase harvesting, Sypex Geo, Telegram exfiltration, local credential logs | [Read case study](CyberDefenders/Phishing-Kit-Analysis/README.md) |
+| Yellow Rat | VirusTotal analysis, Yellow Rat attribution, DLL identification, malware timestamps, dropped AppData artifact, C2 infrastructure | [Read case study](CyberDefenders/Yellow-Cockatoo-Malware-Investigation/README.md) |
+| IcedID | VirusTotal analysis, IcedID artifacts, GIF delivery infrastructure, domain registrar pivot, MITRE ATT&CK attribution, URLDownloadToFileA behavior | [Read case study](CyberDefenders/IcedID-Malware-Investigation/README.md) |
 | The Crime | Android forensics with ALEAPP, trading-app SHA256, SMS debt evidence, contact identification, Google Maps activity, Discord travel and meeting plans | [Read case study](CyberDefenders/The-Crime/README.md) |
-| Web Server Compromise | Wireshark, HTTP traffic analysis, Gobuster enumeration, Apache Tomcat Manager, malicious WAR upload, reverse shell and Cron persistence | [Read case study](CyberDefenders/Web-Server-Compromise/README.md) |
-| Phishing Kit Analysis | PHP source-code analysis, MetaMask seed-phrase harvesting, Sypex Geo, Telegram exfiltration, local credential logs | [Read case study](CyberDefenders/Phishing-Kit-Analysis/README.md) |
-
 ## LetsDefend
 
 | Event ID | Alert | Focus | Verdict | Write-up |
