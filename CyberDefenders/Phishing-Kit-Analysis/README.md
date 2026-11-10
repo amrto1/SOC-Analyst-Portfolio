@@ -208,6 +208,14 @@ These findings demonstrate how phishing kits combine credential harvesting, vict
 
 ## Screenshots
 
-- [Directory structure](screenshots/Q1.png)
-- [PHP source code](screenshots/code.png)
-- [Collected log entries](screenshots/logs.png)
+### Directory Structure
+
+![Phishing kit directory structure](screenshots/Q1.png)
+
+### PHP Source Code
+
+![PHP source code](screenshots/code.png)
+
+### Collected Log Entries
+
+![Collected log entries](screenshots/logs.png)
