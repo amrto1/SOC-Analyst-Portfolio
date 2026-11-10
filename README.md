@@ -12,6 +12,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | PoisonedCredentials | Wireshark, LLMNR/NBNS poisoning, SMB authentication, NTLMv2 analysis | [Read case study](CyberDefenders/PoisonedCredentials/README.md) |
 | PsExec Lateral Movement | Wireshark, SMB2, NTLMSSP authentication, PsExec service deployment, ADMIN$ and IPC$ shares | [Read case study](CyberDefenders/PsExec-Lateral-Movement/README.md) |
 | Yellow Cockatoo Malware Investigation | VirusTotal analysis, Yellow Cockatoo attribution, DLL identification, malware timestamps, dropped AppData artifact, C2 infrastructure | [Read case study](CyberDefenders/Yellow-Cockatoo-Malware-Investigation/README.md) |
+| IcedID Malware Investigation | VirusTotal analysis, IcedID artifacts, GIF delivery infrastructure, domain registrar pivot, MITRE ATT&CK attribution, URLDownloadToFileA behavior | [Read case study](CyberDefenders/IcedID-Malware-Investigation/README.md) |
 | Web Server Compromise | Wireshark, HTTP traffic analysis, Gobuster enumeration, Apache Tomcat Manager, malicious WAR upload, reverse shell and Cron persistence | [Read case study](CyberDefenders/Web-Server-Compromise/README.md) |
 | Phishing Kit Analysis | PHP source-code analysis, MetaMask seed-phrase harvesting, Sypex Geo, Telegram exfiltration, local credential logs | [Read case study](CyberDefenders/Phishing-Kit-Analysis/README.md) |
 
