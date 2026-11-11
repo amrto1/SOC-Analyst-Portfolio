@@ -51,7 +51,9 @@ The highest-numbered port identified was:
 
 This port is commonly used by MySQL database services.
 
-**Evidence:** `screenshots/Q1.png`
+**Evidence:**
+
+![Wireshark evidence showing the highest open TCP port](screenshots/Q1.png)
 
 ---
 
@@ -79,8 +81,9 @@ Following the HTTP stream revealed XML content submitted through the upload func
 
 **Evidence:**
 
-- `screenshots/Q2.png`
-- `screenshots/Q2-1.png`
+![HTTP POST request to the vulnerable upload endpoint](screenshots/Q2.png)
+
+![HTTP stream showing the uploaded XML file](screenshots/Q2-1.png)
 
 ---
 
@@ -100,7 +103,9 @@ This identified the first malicious XML file used during the exploitation attemp
 
 **Answer: `TheGreatGatsby.xml`**
 
-**Evidence:** `screenshots/Q2-1.png`
+**Evidence:**
+
+![Multipart upload header identifying TheGreatGatsby.xml](screenshots/Q2-1.png)
 
 ---
 
@@ -133,8 +138,9 @@ This demonstrates an attempt to exploit the XXE vulnerability to access a local 
 
 **Evidence:**
 
-- `screenshots/Q4.png`
-- `screenshots/Q4-1.png`
+![XXE payload referencing the local configuration file](screenshots/Q4.png)
+
+![HTTP response associated with the configuration file disclosure](screenshots/Q4-1.png)
 
 ---
 
@@ -157,7 +163,9 @@ This exposed the database credentials, including the password used by the applic
 
 **Answer: `Winter2024`**
 
-**Evidence:** `screenshots/Q5.png`
+**Evidence:**
+
+![Exposed database configuration and credentials](screenshots/Q5.png)
 
 ---
 
@@ -183,7 +191,9 @@ The first relevant login attempt after the credential disclosure occurred at:
 
 **Answer: `2024-05-31 12:08`**
 
-**Evidence:** `screenshots/login-after-theft.png`
+**Evidence:**
+
+![First MySQL login request after credential disclosure](screenshots/login-after-theft.png)
 
 ---
 
@@ -205,8 +215,9 @@ The filename was associated with the attacker's web shell activity and intended 
 
 **Evidence:**
 
-- `screenshots/Q7.png`
-- `screenshots/Q7-1.png`
+![HTTP request associated with the booking.php web shell](screenshots/Q7.png)
+
+![Additional HTTP stream evidence for booking.php](screenshots/Q7-1.png)
 
 ---
 
