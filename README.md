@@ -15,6 +15,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | GrabThePhisher | PHP source-code analysis, MetaMask seed-phrase harvesting, Sypex Geo, Telegram exfiltration, local credential logs | [Read case study](CyberDefenders/Phishing-Kit-Analysis/README.md) |
 | Yellow Rat | VirusTotal analysis, Yellow Rat attribution, DLL identification, malware timestamps, dropped AppData artifact, C2 infrastructure | [Read case study](CyberDefenders/Yellow-Cockatoo-Malware-Investigation/README.md) |
 | IcedID | VirusTotal analysis, IcedID artifacts, GIF delivery infrastructure, domain registrar pivot, MITRE ATT&CK attribution, URLDownloadToFileA behavior | [Read case study](CyberDefenders/IcedID-Malware-Investigation/README.md) |
+| Ramnit | Volatility 3 memory forensics, suspicious process analysis, network connection recovery, executable extraction, VirusTotal intelligence | [Read case study](CyberDefenders/Ramnit/README.md) |
 | The Crime | Android forensics with ALEAPP, trading-app SHA256, SMS debt evidence, contact identification, Google Maps activity, Discord travel and meeting plans | [Read case study](CyberDefenders/The-Crime/README.md) |
 ## LetsDefend
 
