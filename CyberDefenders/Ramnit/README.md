@@ -2,26 +2,28 @@
 
 ## Overview
 
-This case study documents a Windows memory-forensics investigation using **Volatility 3** and **VirusTotal**. The objective was to identify the suspicious process in the memory image, trace its network activity, recover the executable from memory, and collect related threat-intelligence indicators.
+This investigation focuses on analyzing a Windows memory dump using **Volatility 3** and **VirusTotal**.
 
-The investigation focused on the process **ChromeSetup.exe** (PID **4628**). Although its name resembles a legitimate Google Chrome installer, its observed outbound connection and VirusTotal relationships warranted further investigation.
+The objective was to identify suspicious processes, investigate their network activity, extract the suspicious executable from memory, calculate its hash, and identify associated threat infrastructure.
+
+During the investigation, a process named `ChromeSetup.exe` (PID `4628`) was identified. The process was associated with an outbound connection attempt to an external IP address, which led to further investigation of the executable.
 
 ## What is Volatility 3?
 
-**Volatility 3** is an open-source memory forensics framework used to analyze memory images (RAM dumps). It helps investigators recover information about running processes, network connections, loaded modules, command-line arguments, handles, and file objects from a captured memory image.
+**Volatility 3** is an open-source memory forensics framework used to analyze RAM dumps. It allows investigators to extract valuable information from memory, including running processes, network connections, loaded DLLs, command-line arguments, and other forensic artifacts.
 
-### Useful Volatility 3 plugins
+### Common Volatility 3 Plugins
 
 | Plugin | Purpose |
 |---|---|
 | `windows.pslist` | Lists processes present in memory |
 | `windows.pstree` | Displays processes as a tree, showing parent-child relationships |
 | `windows.cmdline` | Displays command-line arguments used to launch processes |
-| `windows.netscan` | Recovers network connections and their associated processes |
+| `windows.netscan` | Extracts network connections |
 | `windows.dlllist` | Lists DLLs loaded by a process |
-| `windows.malfind` | Searches memory regions that may indicate injected or suspicious code |
-| `windows.dumpfiles` | Extracts file objects and file-backed data from memory |
-| `windows.handles` | Lists handles opened by processes |
+| `windows.malfind` | Searches memory regions that may indicate code injection |
+| `windows.dumpfiles` | Extracts files from memory |
+| `windows.handles` | Displays handles associated with processes |
 
 ## Investigation Findings
 
@@ -31,7 +33,19 @@ The investigation focused on the process **ChromeSetup.exe** (PID **4628**). Alt
 
 **Analysis:**
 
-The process tree (`windows.pstree`) identified a process named `ChromeSetup.exe` with PID **4628**. Its name alone does not establish that it is malicious, so its execution details and network activity were examined next.
+I first used the `windows.pstree` plugin to examine the process tree and identify processes running in the memory image.
+
+The investigation identified a process named `ChromeSetup.exe` with PID `4628`, running from the user's Downloads directory.
+
+I then examined the network connections using `windows.netscan` and found that this process was associated with an outbound connection attempt to the external IP address `58.64.204.181` over TCP port `5202`.
+
+This network activity made `ChromeSetup.exe` the primary process of interest for further investigation.
+
+**Command:**
+
+```powershell
+vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" windows.pstree
+```
 
 ### Q2. What is the exact path of the executable for the malicious process?
 
@@ -39,17 +53,25 @@ The process tree (`windows.pstree`) identified a process named `ChromeSetup.exe`
 
 **Analysis:**
 
-The `windows.cmdline` output showed the command line used to launch PID 4628:
+I used the `windows.cmdline` plugin to examine the command-line arguments of running processes.
+
+The output revealed the following command line for PID `4628`:
 
 ```text
 "C:\Users\alex\Downloads\ChromeSetup.exe"
 ```
 
-This established the executable path reported for the process in the memory image.
+This provided the exact executable path associated with the suspicious process.
+
+**Command:**
+
+```powershell
+vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" windows.cmdline
+```
 
 **Evidence:**
 
-![Volatility command-line output showing ChromeSetup.exe and its path](screenshots/cmdline.png)
+![Process command line showing ChromeSetup.exe and its executable path](screenshots/cmdline.png)
 
 ### Q3. What IP address did the malware attempt to connect to?
 
@@ -57,13 +79,27 @@ This established the executable path reported for the process in the memory imag
 
 **Analysis:**
 
-The `windows.netscan` output associated PID **4628** (`ChromeSetup.exe`) with a TCP connection attempt to **58.64.204.181** on destination port **5202**.
+I used the `windows.netscan` plugin to investigate network connections present in the memory dump.
 
-The output included entries in the `CLOSED` and `SYN_SENT` states. The `SYN_SENT` state indicates that a TCP connection attempt had been initiated, but the captured evidence does not show a completed handshake. Therefore, this is best described as an attempted outbound connection, not proof that a session was established.
+The results associated PID `4628` (`ChromeSetup.exe`) with an outbound TCP connection attempt to:
+
+```text
+58.64.204.181:5202
+```
+
+The connection appeared with `CLOSED` and `SYN_SENT` states.
+
+The `SYN_SENT` state indicates that the process attempted to initiate a TCP connection. However, the available evidence does not confirm that the TCP handshake completed.
+
+**Command:**
+
+```powershell
+vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" windows.netscan
+```
 
 **Evidence:**
 
-![Volatility netscan output showing ChromeSetup.exe connecting to 58.64.204.181 on port 5202](screenshots/netscan.png)
+![Network connections showing ChromeSetup.exe attempting to connect to 58.64.204.181](screenshots/netscan.png)
 
 ### Q4. Which city is associated with the IP address the malware communicated with?
 
@@ -71,13 +107,19 @@ The output included entries in the `CLOSED` and `SYN_SENT` states. The `SYN_SENT
 
 **Analysis:**
 
-The IP address **58.64.204.181** was searched on VirusTotal. The IP report displayed **Hong Kong** as its geographic location and identified the network as **AS17444 – HKBN Enterprise Solutions Limited**.
+I searched for the IP address `58.64.204.181` on VirusTotal.
 
-Geolocation identifies the location associated with the IP address; it does not establish the physical location or identity of the attacker.
+The IP report displayed **Hong Kong** as its associated geographic location and identified the network as:
+
+```text
+AS17444 – HKBN Enterprise Solutions Limited
+```
+
+This information provides geographic context about the IP address, but does not establish the physical location of the attacker.
 
 **Evidence:**
 
-![VirusTotal IP report showing the Hong Kong geolocation](screenshots/IP-VT.png)
+![VirusTotal IP address report showing Hong Kong](screenshots/IP-VT.png)
 
 ### Q5. What is the SHA1 hash of the malware executable?
 
@@ -85,7 +127,9 @@ Geolocation identifies the location associated with the IP address; it does not 
 
 **Analysis:**
 
-To recover the executable-related data from the process, the following command was used:
+To extract files associated with the suspicious process, I used the `windows.dumpfiles` plugin with PID `4628`.
+
+**Command:**
 
 ```powershell
 vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" -o "C:\Tools\Volatility3" windows.dumpfiles --pid 4628
@@ -93,44 +137,58 @@ vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" -
 
 **Command breakdown:**
 
-- `-f`: specifies the memory image to analyze.
-- `-o`: specifies the directory where extracted files will be written.
-- `windows.dumpfiles`: extracts file objects and file-backed data available in the memory image.
-- `--pid 4628`: limits the extraction to file objects associated with process ID 4628.
+- `-f`: Specifies the memory dump to analyze.
+- `-o`: Specifies the output directory where extracted files will be saved.
+- `windows.dumpfiles`: Extracts file objects and file-backed data available in the memory image.
+- `--pid 4628`: Filters the extraction to file objects associated with the specified process ID.
 
-The plugin extracted multiple files, including DLLs and two file-backed objects associated with `ChromeSetup.exe`. The executable-related image was identified as:
+The command extracted several files, including DLLs and file objects associated with `ChromeSetup.exe`.
+
+Among the extracted files, I identified the executable-related image:
 
 ```text
 file.0xca82b85325a0.0xca82b7e06c80.ImageSectionObject.ChromeSetup.exe.img
 ```
 
-The DLLs in the output are not automatically suspicious; they can be normal modules mapped by the process. The extracted image was then used as the artifact for hash identification.
+The extracted file was then used to calculate its hash.
 
-To calculate the SHA1 hash in PowerShell:
+**SHA1 calculation:**
 
 ```powershell
 Get-FileHash ".\file.0xca82b85325a0.0xca82b7e06c80.ImageSectionObject.ChromeSetup.exe.img" -Algorithm SHA1
 ```
 
-> **Hash algorithm note:** SHA1 is required for this lab question. Using `-Algorithm SHA256` calculates a different hash and will not produce the requested SHA1 value. A memory-extracted image may also differ from the original on-disk file if some data was not present in the captured memory.
+**SHA256 calculation (additional file identification):**
+
+```powershell
+Get-FileHash ".\file.0xca82b85325a0.0xca82b7e06c80.ImageSectionObject.ChromeSetup.exe.img" -Algorithm SHA256
+```
+
+**Note:** SHA1 and SHA256 are different hashing algorithms. The lab specifically requests SHA1, so the SHA1 command must be used to verify the provided answer. The extracted memory image may also differ from the original on-disk executable if some file data was not present in memory.
 
 **Evidence:**
 
-![Extracted ChromeSetup.exe memory image](screenshots/file.png)
+![ChromeSetup.exe extracted from the memory dump](screenshots/file.png)
 
 ### Q6. What is the compilation timestamp for the malware?
 
-**Answer: `2019-12-01 08:36 UTC`**
+**Answer: `2019-12-01 08:36`**
 
 **Analysis:**
 
-The file's VirusTotal report was reviewed, and the **Creation Time** value displayed under the file's history/details was **2019-12-01 08:36:04 UTC**. This timestamp was used for the lab answer.
+I searched for the executable's hash on VirusTotal and examined the file's Details section.
 
-Timestamps embedded in executable metadata can be altered and should be treated as supporting metadata rather than independently verified proof of when the malware was actually compiled.
+Under the History section, the report displayed the following Creation Time:
+
+```text
+2019-12-01 08:36:04 UTC
+```
+
+This timestamp was used to answer the lab question.
 
 **Evidence:**
 
-![VirusTotal file report showing the creation timestamp](screenshots/VT-creationDate.png)
+![VirusTotal file report showing the Creation Time](screenshots/VT-creationDate.png)
 
 ### Q7. What domain is associated with the malware?
 
@@ -138,9 +196,17 @@ Timestamps embedded in executable metadata can be altered and should be treated 
 
 **Analysis:**
 
-The file's VirusTotal **Relations** tab was examined. Under **Contacted Domains**, the domain **dnsnb8.net** appeared with malicious detections in the VirusTotal report. The related contacted URLs included subdomains such as `ddos.dnsnb8.net`.
+I examined the Relations tab in the VirusTotal report to identify domains associated with the analyzed executable.
 
-This relationship makes the domain a useful threat-intelligence lead for further hunting. A VirusTotal relationship by itself does not prove that the domain was contacted during this specific memory-capture session.
+Under the Contacted Domains section, I identified:
+
+```text
+dnsnb8.net
+```
+
+The report also showed the related subdomain `ddos.dnsnb8.net`, along with contacted URLs associated with this infrastructure.
+
+This domain was recorded as a threat-intelligence indicator for further investigation.
 
 **Evidence:**
 
@@ -148,19 +214,25 @@ This relationship makes the domain a useful threat-intelligence lead for further
 
 ## Indicators of Compromise (IOCs)
 
-| Indicator | Type | Context |
+| Indicator | Type | Description |
 |---|---|---|
-| `ChromeSetup.exe` | Process / filename | Suspicious process identified in memory (PID 4628) |
-| `C:\Users\alex\Downloads\ChromeSetup.exe` | File path | Executable path reported by `windows.cmdline` |
-| `58.64.204.181` | IPv4 address | Remote address in the process's TCP connection attempt |
-| `5202/TCP` | Destination port | Remote port associated with the connection attempt |
-| `dnsnb8.net` | Domain | Domain listed in the sample's VirusTotal relations |
-| `280c9d36039f9432433893dee6126d72b9112ad2` | SHA1 | Lab-provided SHA1 identifier for the executable |
+| `ChromeSetup.exe` | Process | Suspicious process identified in memory |
+| `C:\Users\alex\Downloads\ChromeSetup.exe` | File Path | Executable path |
+| `58.64.204.181` | IP Address | Remote IP associated with the connection attempt |
+| `5202` | TCP Port | Destination port |
+| `dnsnb8.net` | Domain | Domain identified in VirusTotal relations |
+| `280c9d36039f9432433893dee6126d72b9112ad2` | SHA1 | Malware executable hash |
 
 ## Conclusion
 
-The memory investigation identified **ChromeSetup.exe** (PID 4628), running from the user's Downloads directory. Volatility 3's `windows.netscan` plugin associated the process with an attempted outbound TCP connection to **58.64.204.181:5202**. VirusTotal associated that IP with **Hong Kong**.
+The investigation identified `ChromeSetup.exe` (PID `4628`) as the suspicious process running from the user's Downloads directory.
 
-The executable-related image was recovered using `windows.dumpfiles`, and VirusTotal was used to review its metadata and relationships. The investigation recorded the SHA1 **280c9d36039f9432433893dee6126d72b9112ad2**, the reported timestamp **2019-12-01 08:36 UTC**, and the related domain **dnsnb8.net**.
+Using Volatility 3, I examined the process tree, command-line arguments, and network connections. The investigation revealed an attempted outbound TCP connection to `58.64.204.181` over port `5202`.
 
-The findings demonstrate how memory forensics and threat-intelligence pivots can be combined to investigate a suspicious process. Individual indicators—such as a filename, IP geolocation, or timestamp—should be interpreted in context and corroborated with additional evidence.
+I then used `windows.dumpfiles` to extract file objects associated with the suspicious process and identify the executable-related memory image.
+
+VirusTotal was used to investigate the IP address and the extracted executable. The investigation identified Hong Kong as the IP's associated geographic location and revealed `dnsnb8.net` as a related domain.
+
+The executable was associated with the SHA1 hash `280c9d36039f9432433893dee6126d72b9112ad2` and a reported Creation Time of `2019-12-01 08:36 UTC`.
+
+This investigation demonstrates how memory forensics and threat intelligence can be combined to identify suspicious processes, investigate network activity, extract executable artifacts, and collect indicators for threat hunting.
