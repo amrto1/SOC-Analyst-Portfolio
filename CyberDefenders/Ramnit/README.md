@@ -71,7 +71,6 @@ vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" w
 
 **Evidence:**
 
-![Process command line showing ChromeSetup.exe and its executable path](screenshots/cmdline.png)
 
 ### Q3. What IP address did the malware attempt to connect to?
 
@@ -99,7 +98,6 @@ vol -f "C:\Users\AMR MOHAMED\Downloads\159-Ramnit\temp_extract_dir\memory.dmp" w
 
 **Evidence:**
 
-![Network connections showing ChromeSetup.exe attempting to connect to 58.64.204.181](screenshots/netscan.png)
 
 ### Q4. Which city is associated with the IP address the malware communicated with?
 
@@ -119,7 +117,6 @@ This information provides geographic context about the IP address, but does not 
 
 **Evidence:**
 
-![VirusTotal IP address report showing Hong Kong](screenshots/IP-VT.png)
 
 ### Q5. What is the SHA1 hash of the malware executable?
 
@@ -168,7 +165,6 @@ Get-FileHash ".\file.0xca82b85325a0.0xca82b7e06c80.ImageSectionObject.ChromeSetu
 
 **Evidence:**
 
-![ChromeSetup.exe extracted from the memory dump](screenshots/file.png)
 
 ### Q6. What is the compilation timestamp for the malware?
 
@@ -188,7 +184,6 @@ This timestamp was used to answer the lab question.
 
 **Evidence:**
 
-![VirusTotal file report showing the Creation Time](screenshots/VT-creationDate.png)
 
 ### Q7. What domain is associated with the malware?
 
@@ -210,7 +205,6 @@ This domain was recorded as a threat-intelligence indicator for further investig
 
 **Evidence:**
 
-![VirusTotal relations showing dnsnb8.net under Contacted Domains](screenshots/VT-domain.png)
 
 ## Indicators of Compromise (IOCs)
 
