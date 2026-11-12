@@ -19,6 +19,7 @@ A collection of hands-on SOC investigations and blue-team labs.
 | XXE Infiltration | Wireshark, XXE injection, XML file upload, local file disclosure, MySQL credential exposure, web shell investigation | [Read case study](CyberDefenders/XXE-Infiltration/README.md) |
 | Red Stealer | VirusTotal analysis, malware classification, file metadata, MITRE ATT&CK T1005, DNS connectivity check, C2 infrastructure, YARA and Malpedia threat intelligence | [Read case study](CyberDefenders/Red-Stealer/README.md) |
 | Oski | Any.Run and Recorded Future Triage, Stealc malware analysis, C2 infrastructure, RC4 configuration, credential theft, MITRE ATT&CK T1555, sandbox behavior | [Read case study](CyberDefenders/Oski/README.md) |
+| RedLine | Volatility 3 memory forensics, suspicious process analysis, VPN process investigation, network IOC recovery, memory protection analysis | [Read case study](CyberDefenders/RedLine/README.md) |
 | The Crime | Android forensics with ALEAPP, trading-app SHA256, SMS debt evidence, contact identification, Google Maps activity, Discord travel and meeting plans | [Read case study](CyberDefenders/The-Crime/README.md) |
 
 ## LetsDefend
